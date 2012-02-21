@@ -45,7 +45,7 @@ def google_geo_code(request, address=None):
 		result = simplejson.load(urllib.urlopen(search_string))
 		print result
 		if result:	
-			message = simplejson.dumps([i['formatted_address'] for i in result['results']], indent=2)
+			message = simplejson.dumps(result, indent=2)
 
 	return HttpResponse(message, content_type='JSON')
 		 

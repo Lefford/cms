@@ -3,6 +3,7 @@ import os
 from cms.utils.models import AutoCompleteField, NLZipCodeField
 from cms.utils.validators import nl_zipcode
 from cms.settings import PROJECT_ROOT
+from cms.utils.models import LocationMultiValueField
 # Create your models here.
 
 def path_to_tumbs(instance, filename):
@@ -17,6 +18,7 @@ class Address(models.Model):
 	extension	= models.CharField(max_length=3)
 	city 		= models.CharField(max_length=31)
 	adres		= AutoCompleteField(max_length=255)
+	test_address	= LocationMultiValueField(verbose_name='', null=True)
 
 	class Meta:
 		abstract = True
