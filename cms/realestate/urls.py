@@ -9,4 +9,5 @@ urlpatterns = patterns('',
 	url(r'test-maps/$', TestGoogleView.as_view()),
 	url(r'^admin/realestate/\w+/.+/autocomplete/$', 'realestate.views.google_geo_code', name='geocode'),	
 	url(r'^places/$', 'realestate.views.google_geo_code'),
+	url(r'^zoeken/$', 'realestate.views.zoeken'),
 )
