@@ -1,0 +1,9 @@
+{% extends "flatpages/base.html"%}
+{% load i18n %}
+{% load header_menu %}
+
+{% block title %} {{flatpage.title}}{%endblock%}
+
+{% block header %}
+	{% header_menu %}
+{%endblock%}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title%} {%endblock%}</title>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' type='text/css' href='{% block stylesheet%}{{STATIC_URL}}utils/css/base.css{%endblock%}' />
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'/></script>
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'/></script> 
+    <script type='text/javascript' src='{{STATIC_URL}}utils/js/scripts.js'/></script>
+    {% block extrastyle %}{%endblock%}
+    {% block extrahead %}{%endblock%}
+  </head>
+  <body>
+    	<div id='header' class='header h-stretched inverted-low font-styled'>
+		<div class="center full">
+			{% block header %}{%endblock%}
+		</div>
+	</div>
+	<div id='visual-wrapper'>
+ 	  <div class='visual h-stretched center' style="background-image: url({{MEDIA_URL}}images/9292_background);">
+    	      <div id='main-searcher' class='main-searcher center full'>
+	        <form class='searchbox'>
+		  <div class='searchbox-panels'>
+		    <div id='searchbox-panel' class='searchbox-panel'>
+		      <p class='h1 nowrap stronger highlight'>Vind uw woning</p>
+			{{ searchbox }}
+		      <a href="#" class='searchbox-toggle-button expander'>Meer zoekopties</a>
+		    </div>
+		    <div id=searchbox-panel-advance' class='searchbox-panel more-options' style="display:none">
+		      AdvanceForm
+		    </div>
+		  </div>
+		  <div id='searchbox-buttons'>
+		    <input type='submit' value='Vind mijn woning'/>
+	          </div>
+		</form>
+	        {% block visual_content %}{%endblock%}			
+	      </div>
+            </div>
+	  </div>
+	</div>
+	<div id='navigator' class='full center navigator'>
+	  <a href='/' class='main-logo inside'><img src='{{MEDIA_URL}}images/logo_cityhop.png' alt='CityHop'/></a>
+			{%block naviagtor %}{%endblock%}
+	</div>
+	<div id='content'>
+	  <div class='test-content-filler main center full'>
+	    <a class='hide-searcher'>Zoekveld verbergen</a>
+	   Content {%block content %}{%endblock%}
+	  </div>
+	</div>
+	<div class='footer'>
+	  <div class='test-content-filler center full'>
+	    Footer
+	    {%block footer %}{%endblock%}
+	  </div>
+	</div>
+	<a href='#' class='toggle-searcher'>Zoek uw woning</a>
+  </body>
+</html>
